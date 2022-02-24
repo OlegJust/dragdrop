@@ -70,6 +70,13 @@ function addTask(type: string, id: string, text: string) {
     task.appendChild(inputTask);
     task.appendChild(labelTask);
 
+    task.addEventListener('dragstart', () => {
+        task.classList.add('dragging');
+    });
+
+    task.addEventListener('dragend', () => {
+        task.classList.remove('dragging');
+    });
     if (type === 'ToDo') {
         (document.querySelector('.bread') as HTMLElement).appendChild(task);
     } else if (type === 'Doing') {

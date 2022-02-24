@@ -1,12 +1,6 @@
 //import { v4 as uuidv4 } from 'uuid';
 
 const inputEnter = document.querySelector('#addTaskInput') as HTMLInputElement;
-(document.querySelector('.bread') as HTMLElement).innerHTML += `
-        	<div draggable="true" id="draggable" class="task">
-                    <input id="${234234}" type="checkbox" name="r" value="2" />
-                    <label for="${234234}">${'sdfgfgbsfdgd0'}</label>
-                </div>
-        	`;
 
 inputEnter.addEventListener('keydown', function (event) {
     if (event.keyCode === 13) {
@@ -28,19 +22,7 @@ inputEnter.addEventListener('keydown', function (event) {
     (document.querySelector('.deleteAll') as HTMLElement).innerHTML = '';
 };
 
-const draggables = document.querySelectorAll('#draggable');
 const containers = document.querySelectorAll('.container');
-
-draggables.forEach((draggable) => {
-    // console.dir(draggable.children[1]);
-    draggable.addEventListener('dragstart', () => {
-        draggable.classList.add('dragging');
-    });
-
-    draggable.addEventListener('dragend', () => {
-        draggable.classList.remove('dragging');
-    });
-});
 
 containers.forEach((container) => {
     (container as HTMLElement).addEventListener('dragover', (e) => {

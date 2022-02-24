@@ -1,11 +1,5 @@
 "use strict";
 const inputEnter = document.querySelector('#addTaskInput');
-document.querySelector('.bread').innerHTML += `
-        	<div draggable="true" id="draggable" class="task">
-                    <input id="${234234}" type="checkbox" name="r" value="2" />
-                    <label for="${234234}">${'sdfgfgbsfdgd0'}</label>
-                </div>
-        	`;
 inputEnter.addEventListener('keydown', function (event) {
     if (event.keyCode === 13) {
         if (inputEnter.value.length == 0) {
@@ -21,16 +15,7 @@ inputEnter.addEventListener('keydown', function (event) {
 document.getElementById('delete').onclick = function () {
     document.querySelector('.deleteAll').innerHTML = '';
 };
-const draggables = document.querySelectorAll('#draggable');
 const containers = document.querySelectorAll('.container');
-draggables.forEach((draggable) => {
-    draggable.addEventListener('dragstart', () => {
-        draggable.classList.add('dragging');
-    });
-    draggable.addEventListener('dragend', () => {
-        draggable.classList.remove('dragging');
-    });
-});
 containers.forEach((container) => {
     container.addEventListener('dragover', (e) => {
         e.preventDefault();
@@ -106,6 +91,12 @@ function addTask(type, id, text) {
     labelTask.innerHTML = text;
     task.appendChild(inputTask);
     task.appendChild(labelTask);
+    task.addEventListener('dragstart', () => {
+        task.classList.add('dragging');
+    });
+    task.addEventListener('dragend', () => {
+        task.classList.remove('dragging');
+    });
     if (type === 'ToDo') {
         document.querySelector('.bread').appendChild(task);
     }
