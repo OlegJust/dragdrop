@@ -12,10 +12,10 @@ inputEnter.addEventListener('keydown', function (event) {
         }
     }
 });
+const containers = document.querySelectorAll('.container');
 document.getElementById('delete').onclick = function () {
     document.querySelector('.deleteAll').innerHTML = '';
 };
-const containers = document.querySelectorAll('.container');
 containers.forEach((container) => {
     container.addEventListener('dragover', (e) => {
         e.preventDefault();

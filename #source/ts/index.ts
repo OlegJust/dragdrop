@@ -16,13 +16,13 @@ inputEnter.addEventListener('keydown', function (event) {
         }
     }
 });
+const containers = document.querySelectorAll('.container');
 
 //delete
 (document.getElementById('delete') as HTMLButtonElement).onclick = function () {
+    // console.log(containers);
     (document.querySelector('.deleteAll') as HTMLElement).innerHTML = '';
 };
-
-const containers = document.querySelectorAll('.container');
 
 containers.forEach((container) => {
     (container as HTMLElement).addEventListener('dragover', (e) => {
