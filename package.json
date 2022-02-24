@@ -1,0 +1,38 @@
+{
+    "name": "dragdrop_js",
+    "version": "1.0.0",
+    "description": "Drag and drop",
+    "main": "index.html",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "lint-fix": "eslint --ext .ts --ext .html . --fix",
+        "lint": "eslint --ext .ts --ext .html .",
+        "dev": "tsc --watch",
+        "prettier-format": "prettier --config .prettierrc \"#source/ts/**/*ts\" \"#source/kit/**/*html\" \"*html\" --write"
+    },
+    "keywords": [
+        "js",
+        "ts",
+        "javascript",
+        "typescript",
+        "css",
+        "html"
+    ],
+    "author": "Podgorny <olegpodgo@gmail.com>",
+    "license": "ISC",
+    "dependencies": {
+        "@typescript-eslint/eslint-plugin": "^5.12.0",
+        "@typescript-eslint/parser": "^5.12.0",
+        "uuid": "^8.3.2"
+    },
+    "devDependencies": {
+        "@html-eslint/eslint-plugin": "^0.13.1",
+        "@html-eslint/parser": "^0.13.1",
+        "@types/uuid": "^8.3.4",
+        "eslint": "^8.9.0",
+        "eslint-config-prettier": "^8.4.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "prettier": "^2.5.1",
+        "typescript": "^4.5.5"
+    }
+}

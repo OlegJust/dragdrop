@@ -1,0 +1,55 @@
+<div class="content">
+    <div>
+        <div class="list__task">
+            <div class="top">
+                <h3>To Do</h3>
+                <button class="icon-menu2"></button>
+            </div>
+            <div class="form__field">
+                <input
+                    autocomplete="task"
+                    id="addTaskInput"
+                    type="text"
+                    name="task"
+                    class="form__input"
+                    placeholder="Task"
+                    required
+                />
+            </div>
+            <div class="bread container" id="checklist"></div>
+        </div>
+    </div>
+    <div>
+        <div class="list__task">
+            <div class="top">
+                <h3>Doing</h3>
+                <button class="icon-menu2"></button>
+            </div>
+            <div class="doing container" id="checklist"></div>
+        </div>
+    </div>
+    <div>
+        <div class="list__task">
+            <div class="top">
+                <h3>Done</h3>
+                <button class="icon-menu2"></button>
+            </div>
+            <div class="done container" id="checklist"></div>
+        </div>
+    </div>
+    <div>
+        <div class="list__task flex__delete">
+            <div>
+                <div class="top">
+                    <h3>Trash</h3>
+                    <button class="icon-menu2"></button>
+                </div>
+                <div class="deleteAll container" id="checklist"></div>
+            </div>
+
+            <div class="delete">
+                <button id="delete" class="icon-bin2" />
+            </div>
+        </div>
+    </div>
+</div>
