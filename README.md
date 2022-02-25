@@ -1,4 +1,4 @@
-# dragdrop
+# Drag and Drop
 
-Drag and drop Фишка проекта: вручную создать Drag and Drop
+Фишка проекта: вручную создать Drag and Drop
 https://olegjust.github.io/dragdrop/
