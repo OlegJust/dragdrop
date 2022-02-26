@@ -15,16 +15,16 @@ interface allTask {
 
 const allTask: allTask = {
     ToDo: {
-        '16fd2706-8baf-433b-82eb-8c7fada847da': 'sdfsdf'
+        '16fd2706-8baf-433b-82eb-8c7fada847da': '1'
     },
     Doing: {
-        '1234': 'sdfsdf'
+        '1234': '2'
     },
     Done: {
-        '3gdsfgdsf': 'sdfsdf'
+        '3gdsfgdsf': '3'
     },
     Trash: {
-        '2dfsfdfgdgf': 'sdfsdf'
+        '2dfsfdfgdgf': '4'
     }
 };
 
@@ -37,20 +37,20 @@ for (let i = 0; i === todoTasks; i++) {
 
 const doingTasks = Object.keys(allTask.Doing).length - 1;
 for (let i = 0; i === doingTasks; i++) {
-    const id = Object.keys(allTask.ToDo)[i];
-    addTask('Doing', id, allTask.ToDo[id]);
+    const id = Object.keys(allTask.Doing)[i];
+    addTask('Doing', id, allTask.Doing[id]);
 }
 
 const doneTasks = Object.keys(allTask.Done).length - 1;
 for (let i = 0; i === doneTasks; i++) {
-    const id = Object.keys(allTask.ToDo)[i];
-    addTask('Done', id, allTask.ToDo[id]);
+    const id = Object.keys(allTask.Done)[i];
+    addTask('Done', id, allTask.Done[id]);
 }
 
 const trashTasks = Object.keys(allTask.Trash).length - 1;
 for (let i = 0; i === trashTasks; i++) {
-    const id = Object.keys(allTask.ToDo)[i];
-    addTask('Trash', id, allTask.ToDo[id]);
+    const id = Object.keys(allTask.Trash)[i];
+    addTask('Trash', id, allTask.Trash[id]);
 }
 
 function addTask(type: string, id: string, text: string) {
@@ -71,10 +71,28 @@ function addTask(type: string, id: string, text: string) {
     task.appendChild(labelTask);
 
     task.addEventListener('dragstart', () => {
+        delete allTask[
+            type === 'doing'
+                ? 'Doing'
+                : type === 'bread'
+                ? 'ToDo'
+                : type === 'done'
+                ? 'Done'
+                : 'Trash'
+        ][id];
         task.classList.add('dragging');
     });
 
     task.addEventListener('dragend', () => {
+        allTask[
+            type === 'doing'
+                ? 'Doing'
+                : type === 'bread'
+                ? 'ToDo'
+                : type === 'done'
+                ? 'Done'
+                : 'Trash'
+        ][id] = text;
         task.classList.remove('dragging');
     });
     if (type === 'ToDo') {
