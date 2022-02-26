@@ -39,10 +39,12 @@ containers.forEach((container) => {
 });
 
 function getDragAfterElement(container: any, y: any) {
-    const draggableElements = [
-        ...container.querySelectorAll('.draggable:not(.dragging)')
-    ];
+    console.log('1');
 
+    const draggableElements = [
+        ...container.querySelectorAll('.task:not(.dragging)')
+    ];
+    console.log(draggableElements);
     return draggableElements.reduce(
         (closest, child) => {
             const box = child.getBoundingClientRect();
